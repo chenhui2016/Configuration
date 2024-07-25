@@ -63,11 +63,11 @@ vim.api.nvim_set_keymap(
   "<Cmd>call VSCodeNotify('editor.debug.action.runToCursor')<CR>",
   { noremap = true, silent = true }
 )
--- 切换控制台
+-- runToCursor
 vim.api.nvim_set_keymap(
   "n",
   "<leader>s",
-  "<Cmd>call VSCodeNotify('workbench.debug.action.toggleRepl')<CR>",
+  "<Cmd>call VSCodeNotify('editor.debug.action.runToCursor')<CR>",
   { noremap = true, silent = true }
 )
 -- 显示变量信息
