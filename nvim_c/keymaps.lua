@@ -5,6 +5,7 @@
 vim.keymap.set({ "n", "v" }, "H", "^")
 vim.keymap.set({ "n", "v" }, "L", "$")
 vim.keymap.set("n", "mn", "mciw*<Cmd>nohl<CR>", { remap = true })
+vim.keymap.set({ "i", "n", "v" }, "qq", "<ESC>", { remap = true })
 
 -- 展开所有折叠
 vim.api.nvim_set_keymap("n", "zR", "<Cmd>call VSCodeNotify('editor.unfoldAll')<CR>", { noremap = true })
@@ -66,14 +67,23 @@ vim.api.nvim_set_keymap(
 -- runToCursor
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>s",
-  "<Cmd>call VSCodeNotify('editor.debug.action.runToCursor')<CR>",
+  "<leader>x",
+  "<Cmd>call VSCodeNotify('workbench.debug.viewlet.action.addWatchExpression')<CR>",
   { noremap = true, silent = true }
 )
 -- 显示变量信息
 vim.api.nvim_set_keymap(
   "n",
-  "<leader>a",
+  "<leader>z",
   "<Cmd>call VSCodeNotify('editor.debug.action.showDebugHover')<CR>",
   { noremap = true, silent = true }
 )
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>a",
+  "<Cmd>call VSCodeNotify('editor.action.showHover')<CR>",
+  { noremap = true, silent = true }
+)
+
+vim.keymap.set("n", "<C-n>", "mciw*<Cmd>nohl<CR>", { remap = true })
